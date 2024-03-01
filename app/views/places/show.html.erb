@@ -1,12 +1,19 @@
+<div class="p-3" style="width: 200px">
 <h1><%= @place["name"] %></h1>
+</div>
 
-<h2>My Entries</h2>
+<div class="p-3" style="width: 200px">
+  <h2>My Entries</h2>
+</div>
+
 <div class="row">
   <% for entry in @entries %>
-    <div class = "col-md-3">
-      <h3><%= entry["title"] %></h3>
-      <h4><%= entry["occurred_on"] %></h4>
-      <p><%= entry["description"] %></p>
+    <div class = "col-md-4">
+      <div class = "p-3" style= "width:20px">
+        <h3><%= entry["title"] %></h3>
+        <h4><%= entry["occurred_on"] %></h4>
+        <p><%= entry["description"] %></p>
+      </div>
     </div>
   <% end %>
 </div>
