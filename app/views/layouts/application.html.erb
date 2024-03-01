@@ -19,7 +19,7 @@
         <a href="/login">Login</a>
       <% else %>
         <!-- else, if user logged-in, display user name and logout link -->
-        Hey, <%= @user["username"] %>
+        Logged in as <%= @user["username"] %>
         |
         <a href="/logout">Logout</a>
       <% end %>
