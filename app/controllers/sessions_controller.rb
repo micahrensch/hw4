@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by({"email" => params["email"]})
 
+    # BCrypt::Password.new(encrypted) == secret
     if @user != nil
-      if @user["password"] == params["password"]
+      if BCrypt::Password.new(@user["password"]) == params["password"]
         flash["notice"] = "Welcome."
         redirect_to "/places"
       else 
